@@ -1,0 +1,806 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Titillium Web", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Asegurarse de que no haya scroll horizontal */
+}
+
+p {
+  font-size: 14px;
+  line-height: 22.4px;
+  color: #6c7279;
+}
+
+h1 {
+  font-size: 65px;
+  color: #2d3033;
+}
+
+h2 {
+  font-size: 40px;
+  color: #2d3033;
+}
+
+h3 {
+  font-size: 40px;
+  color: #2d3033;
+  font-weight: 300;
+}
+
+h4 {
+  font-size: 22px;
+  color: #000000;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 14px;
+  color: #2d3033;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Anton", sans-serif;
+}
+
+.btn {
+  background-color: transparent;
+  color: #050304;
+  font-size: 16px;
+  font-weight: 600;
+  border: 0;
+  border-radius: 2px;
+  display: inline-block;
+  text-transform: uppercase;
+  border: 1px solid #000000;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #0b0909;
+  color: #fff;
+}
+
+.btn-large {
+  padding: 15px 40px;
+}
+
+/* Carrousel styles */
+.carousel {
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.carousel-inner {
+  height: 100%;
+  width: 100%;
+}
+
+.custom-carousel .carousel-item {
+  height: 100vh;
+  width: 100%;
+}
+
+.custom-carousel .carousel-item img {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  background-color: rgb(255 255 255);
+  padding: 0.7rem !important;
+  position: sticky;
+  top: 0; /* Asegurar que el navbar esté siempre visible */
+  width: 100%;
+  z-index: 999;
+  font-size: 2em;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  height: max-content;
+  font-weight: bold;
+}
+
+.navbar-brand-container {
+  display: inline-block;
+  height: 11vh;
+  width: 30%;
+}
+
+.navbar-brand-img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.navbar-nav-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 2rem;
+  width: 100%;
+}
+
+.navbar-nav-pages {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2.5rem;
+  margin-right: 2rem;
+}
+
+.nav-item {
+  list-style: none;
+}
+
+.nav-link {
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #868686;
+}
+
+.navbar-nav-media {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-toggle {
+  background: none;
+  border: none;
+  color: #000000;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1000;
+  visibility: hidden;
+}
+
+.navbar-nav-container.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 5px;
+  z-index: 999;
+}
+
+/* Products style */
+.three-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80vh;
+  margin: 1rem 0;
+  justify-content: space-between;
+}
+
+.two-container {
+  display: flex;
+  width: 49.5%;
+  height: 100%;
+}
+
+.one-img-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.one-img-container a {
+  text-decoration: none;
+  height: 100%;
+}
+
+.title {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(255, 255, 255);
+  z-index: 1;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.one-img-container img {
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.one-img-container img:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/* somos style */
+
+.somos-container {
+  display: flex;
+  background-color: #ffffff;
+  width: 100%;
+  height: 40vh;
+  padding: 0 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.somos-container-text {
+  display: flex;
+  align-items: center;
+  img {
+    width: 50%;
+  }
+}
+.somos-frase {
+  color: #000000;
+  font-size: 5rem;
+  font-family: "Titillium Web", sans-serif;
+}
+
+/* footer styles */
+footer {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.footer-container-social .footer-container-media {
+  margin-top: 1rem;
+}
+
+.footer-container-social .footer-container-img img {
+  max-width: 200px;
+  height: auto;
+}
+.footer-container-media {
+  display: flex;
+  justify-content: center;
+}
+.footer-container-img {
+  display: flex;
+  justify-content: center;
+}
+.footer-container-social .navbar-nav-media {
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+}
+
+.footer-container-social .navbar-nav-media .nav-link {
+  font-size: 1.5rem;
+  color: #ffffff;
+  width: 25%;
+}
+
+.footer-container-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.container {
+  margin: 0%;
+  .row {
+    position: relative;
+    left: 0;
+  }
+}
+/* seccion de contacto */
+/* Contact form styles */
+.section {
+  padding: 60px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.conForm {
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.conForm .form-control {
+  margin-bottom: 1rem;
+}
+
+.conForm .btn {
+  width: 100%;
+  background: #000000;
+  border: none;
+  color: white;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.conForm .btn:hover {
+  background: #5e6164;
+}
+
+#message {
+  display: none;
+  margin-bottom: 1rem;
+  color: #d9534f;
+  font-weight: bold;
+}
+
+/* glasses list styles */
+/* Hero Section */
+.hero {
+  padding: 50px 0;
+  text-align: center;
+  background-color: #f8f9fa; /* Light background for contrast */
+}
+
+.container-title-filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Space between the title and the filter button */
+}
+
+.title-filter {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.dropdown-toggle {
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+.dropdown-menu {
+  width: min-content;
+}
+.dropdown-menu button {
+  width: 100%;
+  text-align: left;
+  border: none;
+}
+
+/* Glasses Container */
+.container-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+.container-list-group {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.container-list-item {
+  width: calc(33.333% - 2rem); /* Three items per row with space */
+}
+.glasses-container {
+  border: 1px solid #000;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.glasses-container-img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.glasses-container-img img {
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.glasses-container img:hover {
+  transform: scale(1.1);
+}
+.glasses-material,
+.glasses-title {
+  margin: 0;
+}
+
+.glasses-material {
+  font-size: 12px;
+  color: #999;
+}
+
+.glasses-title {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.list-img-colors {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.list-img-colors li {
+  margin: 0 5px;
+}
+
+.list-img-colors img {
+  width: 40px;
+  height: auto;
+}
+
+/* Adjustments for responsive design */
+@media (max-width: 1200px) {
+  .glasses-container {
+    width: calc(50% - 2rem); /* Two items per row with space */
+  }
+}
+
+/* Footer */
+.footer-container-social img {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.navbar-nav-media.list-inline {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.navbar-nav-links.list-inline {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.footer .nav-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer .nav-link:hover {
+  color: #ccc;
+}
+
+/* seccion de encontranos */
+
+/* Seccion Opticas */
+.container-opticas {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.scrollable-list {
+  max-height: 70vh;
+  overflow-y: hidden;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  scrollbar-color: #2d3033;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  border: 1px solid #ddd;
+  padding: 1rem;
+}
+
+.scrollable-list-item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  max-height: fit-content;
+}
+
+.scrollable-list-item:hover {
+  background-color: #f1f1f1;
+}
+
+.scrollable-list-item a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+
+  p {
+    margin: 0.5em;
+  }
+}
+
+.container-opticas-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background-color: transparent;
+  color: #050304;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid #000000;
+  border-radius: 2px;
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.dropdown-content .dropdown-item {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-content .dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+.item-btn {
+  background-color: transparent;
+  color: #050304;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid #000000;
+  border-radius: 2px;
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.item-btn:hover {
+  background-color: #0b0909;
+  color: #fff;
+}
+
+.show {
+  display: block;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .section-header p {
+    font-size: 1rem;
+  }
+
+  .conForm {
+    padding: 20px;
+  }
+
+  .conForm .btn {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .navbar {
+    width: 100%;
+    height: 7vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: revert;
+    font-size: 1em;
+  }
+
+  .navbar-brand-container {
+    height: 5vh;
+    width: 50%;
+    margin-left: 1.6em;
+  }
+
+  .nav-toggle {
+    display: flex;
+    visibility: visible;
+    font-size: 1.5rem;
+    width: 50%;
+    padding-right: 3em;
+    justify-content: flex-end;
+  }
+
+  .navbar-nav-container {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+  }
+
+  .navbar-nav-container.active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar-nav-pages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+  }
+
+  .navbar-nav-media {
+    margin-top: 1rem;
+  }
+
+  .navbar-brand-link {
+    height: 100%;
+    display: flex;
+  }
+
+  .three-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .two-container {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .somos-container {
+    height: auto;
+    padding: 1rem;
+  }
+
+  .somos-frase {
+    font-size: 2rem;
+  }
+  .footer-container-social {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .footer-container-social .footer-container-img img {
+    max-width: 80px;
+  }
+
+  .footer-container-social .navbar-nav-media {
+    justify-content: center;
+  }
+
+  .footer-container-links {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-container-links .navbar-nav-links {
+    justify-content: center;
+  }
+
+  /* glasses section */
+  .container-title-filter {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .title-filter {
+    font-size: 2rem;
+  }
+
+  .glasses-container {
+    width: calc(100% - 1rem); /* One item per row with space */
+  }
+  .container-list-group {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
+  .container-list-item {
+    width: 100%;
+  }
+  .glasses-container {
+    width: 100%;
+  }
+  .glasses-container img {
+    width: 100%;
+  }
+
+  .glasses-container img:hover {
+    transform: scale(1.1);
+  }
+}
+/* scroll bar */
+::-webkit-scrollbar {
+  width: 0.7em;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 20px;
+}

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>@mitogafas</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://kit.fontawesome.com/ffbad2f4f0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+<style>.container-opticas {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+  
+  .scrollable-list {
+    max-height: 70vh;
+    overflow-y: hidden;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    scrollbar-color: #2d3033;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    border: 1px solid #ddd;
+    padding: 1rem;
+  }
+  
+  .scrollable-list-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-height: fit-content;
+  }
+  
+  .scrollable-list-item:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .scrollable-list-item a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  
+    p {
+      margin: 0.5em;
+    }
+  }
+  
+  .container-opticas-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-btn {
+    background-color: transparent;
+    color: #050304;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid #000000;
+    border-radius: 2px;
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .dropdown-content .dropdown-item {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .dropdown-content .dropdown-item:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .item-btn {
+    background-color: transparent;
+    color: #050304;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid #000000;
+    border-radius: 2px;
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .item-btn:hover {
+    background-color: #0b0909;
+    color: #fff;
+  }
+  
+  .show {
+    display: block;
+  }
+  </style>
+
+    <header>
+        <nav class="navbar" id="header">
+            <div class="navbar-brand-container">
+                <a class="navbar-brand-link" href="./index.html">
+                    <img class="navbar-brand-img" src="img/LOGO.jpg.png" alt="MitoGafas Logo">
+                </a>
+            </div>
+            <div class="navbar-nav-container">
+                <ul class="navbar-nav-pages navigation">
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html?title=RECETA">RECETA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html?title=SOL">SOL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html?title=CLIP ON">CLIP ON</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">SOMOS MITO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="encontranos.html?title=ENCONTRANOS">ENCONTRANOS</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav-media">
+                    <li class="nav-brand">
+                        <a class="nav-link" href="https://www.instagram.com/mitogafas/"><i
+                                class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li class="nav-brand">
+                        <a class="nav-link" href="https://www.facebook.com/mitogafasok/"><i
+                                class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li class="nav-brand">
+                        <a class="nav-link" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <button class="nav-toggle"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+    <main>
+        <!-- section hero -->
+        <section class="hero">
+            <div class="container-title-filter">
+                <h1 class="title-filter"></h1>
+            </div>
+        </section>
+        <!-- section opticas -->
+        <section class="container-opticas">
+            <div class="container-opticas-title">
+                <h1>OPTICAS</h1>
+                <div class="dropdown">
+                    <button class="dropdown-btn">LOCALIDAD</button>
+                    <input type="text" id="searchInput" placeholder="Buscar...">
+                    <div class="dropdown-content">
+                        <div class="dropdown-item" data-filter-text="ADROGUE">
+                            <button class="item-btn">ADROGUE</button>
+                        </div>
+                        <div class="dropdown-item" data-filter-text="ALBERDI">
+                            <button class="item-btn">ALBERDI</button>
+                        </div>
+                        <div class="dropdown-item" data-filter-text="ALBERTI">
+                            <button class="item-btn">ALBERTI</button>
+                        </div>
+                        <div class="dropdown-item" data-filter-text="ARENALES">
+                            <button class="item-btn">ARENALES</button>
+                        </div>
+                        <div class="dropdown-item" data-filter-text="ARRECIFES">
+                            <button class="item-btn">ARRECIFES</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="scrollable-list">
+                <div class="scrollable-list-item">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Direccion+1,Provincia+1,Localidad+1"
+                        target="_blank">
+                        <h3>Optica 1</h3>
+                        <p><strong>Provincia:</strong> Provincia 1</p>
+                        <p><strong>Localidad:</strong> Localidad 1</p>
+                        <p><strong>Direccion:</strong> Direccion 1</p>
+                        <p><strong>Telefono:</strong> Telefono 1</p>
+                    </a>
+                </div>
+                <div class="scrollable-list-item">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Direccion+2,Provincia+2,Localidad+2"
+                        target="_blank">
+                        <h3>Optica 2</h3>
+                        <p><strong>Localidad:</strong> Localidad 2</p>
+                        <p><strong>Provincia:</strong> Provincia 2</p>
+                        <p><strong>Direccion:</strong> Direccion 2</p>
+                        <p><strong>Telefono:</strong> Telefono 2</p>
+                    </a>
+                </div>
+                <div class="scrollable-list-item">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Direccion+3,Provincia+3,Localidad+3"
+                        target="_blank">
+                        <h3>Optica 3</h3>
+                        <p><strong>Localidad:</strong> Localidad 3</p>
+                        <p><strong>Provincia:</strong> Provincia 3</p>
+                        <p><strong>Direccion:</strong> Direccion 3</p>
+                        <p><strong>Telefono:</strong> Telefono 3</p>
+                    </a>
+                </div>
+                <!-- Agrega más elementos aquí según sea necesario -->
+            </div>
+        </section>
+
+    </main>
+    <!-- footer -->
+    <footer class="footer bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Logo and social media links -->
+                <div class="col-md-4 footer-container-social">
+                    <div class="footer-container-img mb-3">
+                        <img src="./img/LOGO.jpg.png" alt="logo-footer" class="img-fluid">
+                    </div>
+                    <div class="footer-container-media">
+                        <ul class="navbar-nav-media list-inline">
+                            <li class="list-inline-item">
+                                <a class="nav-link text-white" href="https://www.instagram.com/mitogafas/"><i
+                                        class="fa-brands fa-instagram"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="nav-link text-white" href="https://www.facebook.com/mitogafasok/"><i
+                                        class="fa-brands fa-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="nav-link text-white" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Links -->
+                <div class="col-md-4 footer-container-links">
+                    <ul class="navbar-nav-links list-inline">
+                        <li class="list-inline-item">
+                            <a class="nav-link text-white" href="#">Acerca de</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="nav-link text-white" href="./contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav-links list-inline">
+                        <li class="list-inline-item">
+                            <a class="nav-link text-white" href="#">Politica de privacidad</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="nav-link text-white" href="#">Terminos y condiciones</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script>
+        document.querySelector('.nav-toggle').addEventListener('click', function () {
+            const navContainer = document.querySelector('.navbar-nav-container');
+            navContainer.classList.toggle('active');
+        });
+    </script>
+    <script>
+        // Función para obtener parámetros de la URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Obtener el parámetro "title" de la URL
+        const title = getQueryParam('title');
+
+        // Si hay un título en la URL, actualizar el contenido del elemento <h1>
+        if (title) {
+            document.querySelector('.title-filter').textContent = title;
+        }
+
+    </script>
+    <script>
+        function handleClick(optica) {
+            alert('You clicked on ' + optica);
+        }
+    </script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdownBtn = document.querySelector('.dropdown-btn');
+    const dropdownContent = document.querySelector('.dropdown-content');
+    const searchInput = document.getElementById('searchInput');
+    const dropdownItems = dropdownContent.querySelectorAll('.dropdown-item');
+
+    dropdownBtn.addEventListener('click', function () {
+        dropdownContent.classList.toggle('show');
+    });
+
+    // Función para filtrar los elementos del dropdown
+    function filterDropdownItems() {
+        const searchTerm = searchInput.value.toLowerCase();
+
+        dropdownItems.forEach(function (item) {
+            const itemText = item.getAttribute('data-filter-text').toLowerCase();
+            if (itemText.includes(searchTerm)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+
+    // Evento de entrada en el campo de búsqueda
+    searchInput.addEventListener('input', filterDropdownItems);
+
+    // Close the dropdown if the user clicks outside of it
+    window.addEventListener('click', function (event) {
+        if (!event.target.matches('.dropdown-btn')) {
+            if (dropdownContent.classList.contains('show')) {
+                dropdownContent.classList.remove('show');
+            }
+        }
+    });
+});
+</script>
+</body>
+
+</html>
