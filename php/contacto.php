@@ -16,11 +16,11 @@ $mensaje = $_POST["mensaje"];
 
 // Datos de la cuenta de correo utilizada para enviar vía SMTP
 $smtpHost = "c1901928.ferozo.com";  // Dominio alternativo brindado en el email de alta 
-$smtpUsuario = "gafasmito@gmail.com ";  // Mi cuenta de correo
+$smtpUsuario = "mitogafasok@gmail.com";  // Mi cuenta de correo
 $smtpClave = "@Lascamelias33";  // Mi contraseña
 
 // Email donde se enviaran los datos cargados en el formulario de contacto
-$emailDestino = "gafasmito@gmail.com ";
+$emailDestino = "mitogafasok@gmail.com";
 
 $mail = new PHPMailer();
 $mail->IsSMTP();

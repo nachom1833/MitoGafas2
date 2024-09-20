@@ -1,5 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
+:root {
+  --color-principal: #000000;
+  --color-hover: #868686;
+  --color-fondo: #ffffff;
+  --fuente-principal: "Titillium Web", sans-serif;
+  --fuente-secundaria: "Anton", sans-serif;
+}
+
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo);
+}
+
+.nav-link {
+  color: var(--color-principal);
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--color-hover);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -60,6 +82,7 @@ h4,
 h5,
 h6 {
   font-family: "Anton", sans-serif;
+  letter-spacing: 0.3rem;
 }
 
 .btn {
@@ -88,7 +111,7 @@ h6 {
 .carousel {
   width: 100%;
   margin: 0 auto;
-  height: 100vh;
+  height: 90vh;
 }
 
 .carousel-inner {
@@ -107,6 +130,36 @@ h6 {
 }
 
 /* Navbar styles */
+.navbar-brand-img {
+  height: 60px; /* Aumenta el tamaño del logo si es necesario */
+}
+
+.carousel .carousel-item img {
+  height: 90vh;
+  object-fit: cover;
+}
+
+.glasses-container-img img {
+  height: auto;
+  max-height: 300px; /* Ajusta según el diseño */
+}
+.navbar-nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.navbar-nav-pages {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.navbar-nav-media {
+  display: flex;
+  gap: 1rem;
+}
+
 .navbar {
   display: flex;
   background-color: rgb(255 255 255);
@@ -226,6 +279,7 @@ h6 {
 .one-img-container a {
   text-decoration: none;
   height: 100%;
+  width: 100%;
 }
 
 .title {
@@ -261,15 +315,15 @@ h6 {
   width: 100%;
   height: 40vh;
   padding: 0 2.5rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
 }
 .somos-container-text {
   display: flex;
   align-items: center;
-  img {
-    width: 50%;
-  }
 }
 .somos-frase {
   color: #000000;
@@ -322,8 +376,12 @@ footer {
   flex-direction: column;
   gap: 0.5rem;
 }
+
 .container {
   margin: 0%;
+  max-width: 1400px; /* Ajusta según tus necesidades */
+  margin: 0 auto; /* Centra el contenedor */
+  padding: 0 2rem;
   .row {
     position: relative;
     left: 0;
@@ -420,10 +478,11 @@ footer {
 /* Glasses Container */
 .container-list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: nowrap;
   gap: 1rem;
   width: 100%;
+  flex-direction: column;
+
 }
 .container-list-group {
   display: flex;
@@ -432,16 +491,18 @@ footer {
 }
 .container-list-item {
   width: calc(33.333% - 2rem); /* Three items per row with space */
+  height: max-content;
+  
 }
 .glasses-container {
-  border: 1px solid #000;
+  border: 1.5px solid #6c757d;
   padding: 20px;
   text-align: center;
   box-sizing: border-box;
+  height: 100%;
+
 }
 .glasses-container-img {
-  width: 100%;
-  height: 100%;
   overflow: hidden;
 }
 .glasses-container-img img {
@@ -474,25 +535,18 @@ footer {
   list-style: none;
   padding: 0;
   display: flex;
-  justify-content: center;
-  margin-top: 10px;
+  justify-content: space-evenly;
 }
 
 .list-img-colors li {
-  margin: 0 5px;
+ 
 }
 
 .list-img-colors img {
-  width: 40px;
+  width: 100%;
   height: auto;
 }
 
-/* Adjustments for responsive design */
-@media (max-width: 1200px) {
-  .glasses-container {
-    width: calc(50% - 2rem); /* Two items per row with space */
-  }
-}
 
 /* Footer */
 .footer-container-social img {
@@ -641,6 +695,128 @@ footer {
   display: block;
 }
 
+/* Section disclaimer */
+
+.disclaimer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  margin: 0.6rem;
+
+  .disclaimer-container-text {
+  }
+  .disclaimer-container-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    gap: 0.2rem;
+    
+  }
+}
+
+
+/*Seccion detalle anteojos*/
+.img-thumbnail{
+
+
+}
+.mt-3 {
+  margin-top: 1rem;
+  display:flex;
+  justify-content: space-evenly;
+}
+.thumbnail-img.active {
+  border: 2px solid #000;
+}
+/* Estilos generales para el main */
+main {
+  padding: 2rem;
+}
+
+/* Estilos del detalle del producto */
+#product-detail h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+#product-detail h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+#product-detail p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Carousel */
+#carouselImages{
+  height: 50vh;
+  img{
+    width: 100%;
+    height:50vh;
+    padding: 2rem;
+  }
+}
+.carousel-inner img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+/* Miniaturas del carrusel */
+.thumbnail-img {
+  width: max-content;
+  height: auto;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.thumbnail-img.active {
+  border-color: #333;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+
+  #product-detail h2 {
+    font-size: 1.75rem;
+  }
+
+  #product-detail h4 {
+    font-size: 1.25rem;
+  }
+
+  #product-detail p {
+    font-size: 0.9rem;
+  }
+
+  /* Miniaturas */
+  .thumbnail-img {
+    width: 60px;
+  }
+}
+
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .section-header h2 {
@@ -659,6 +835,260 @@ footer {
     font-size: 0.9rem;
     padding: 8px;
   }
+}
+/* Estilos por defecto (Mobile-first) */
+
+/* Tablet y dispositivos medianos */
+@media (min-width: 769px) and (max-width: 1200px) {
+  /* Navbar Styles */
+  .navbar {
+    padding: 1rem 2.5rem; /* Aumenta el padding lateral */
+    font-size: 1.1em; /* Incrementa ligeramente el tamaño de fuente */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+  }
+
+  .navbar-brand-container {
+    width: 25%; /* Ajusta el ancho del contenedor de la marca */
+    margin-left: 0; /* Elimina el margen adicional */
+  }
+
+  .navbar-brand-img {
+    height: 60px; /* Aumenta el tamaño del logo */
+    width: auto;
+  }
+
+  .navbar-nav-container {
+    justify-content: flex-end;
+    margin-right: 2rem; /* Espacio a la derecha */
+  }
+
+  .navbar-nav-pages {
+    gap: 2rem; /* Espacio entre enlaces de navegación */
+  }
+
+  .navbar-nav-media {
+    gap: 1.5rem; /* Espacio entre íconos de redes sociales */
+  }
+
+  .nav-toggle {
+    display: none; /* Oculta el botón de toggle, ya que hay suficiente espacio */
+  }
+
+  /* Alineación de los elementos del navbar */
+  .navbar-nav-container.active {
+    /* Mantiene la funcionalidad del toggle si es necesario */
+  }
+
+  /* Ajustes de fuentes para enlaces */
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  /* Contenedores de Productos */
+  .three-container {
+    flex-direction: row;
+    height: 70vh;
+    margin: 2rem 0;
+  }
+
+  .two-container {
+    height: 100%;
+  }
+
+  .one-img-container {
+    height: 100%;
+  }
+
+  .one-img-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .one-img-container img:hover {
+    transform: scale(1.05); /* Efecto de hover sutil */
+  }
+
+  /* Ajustes en la Sección "Somos" */
+  .somos-container {
+    height: 50vh;
+    padding: 2rem 3rem;
+  }
+  .somos-container-text img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+  }
+
+  .somos-frase {
+    font-size: 3rem; /* Tamaño de fuente ajustado */
+    text-align: left;
+  }
+
+  /* Ajustes en la Sección de Filtrado de Gafas */
+  .container-title-filter {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .title-filter {
+    font-size: 2.5rem;
+  }
+
+  /* Lista de Gafas */
+  .container-list-group {
+    gap: 2rem;
+  }
+
+  .glasses-container {
+   
+  }
+
+  .glasses-container-img img {
+    max-height: 250px; /* Limita la altura para mantener la consistencia */
+  }
+
+  /* Formularios y Secciones Adicionales */
+  .conForm {
+    padding: 35px;
+  }
+
+  .conForm .btn {
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  /* Imágenes */
+  .carousel .carousel-item img {
+    /* Ajusta la altura del carousel */
+    object-fit: cover;
+  }
+  .custom-carousel .carousel-item {
+    height: 80vh; /* Ajusta la altura del carousel */
+  }
+  .glasses-container-img img {
+    max-height: 250px; /* Limita la altura de las imágenes de gafas */
+  }
+
+  /* Tipografía */
+  body {
+    font-size: 16px; /* Tamaño base */
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2.8rem;
+  }
+
+  h3 {
+    font-size: 2.3rem;
+  }
+
+  h4 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Botones */
+  .btn {
+    font-size: 1rem;
+    padding: 10px 30px;
+  }
+
+  .btn-large {
+    padding: 15px 50px;
+  }
+}
+
+/* Desktop grande */
+@media (min-width: 1201px) and (max-width: 1500px) {
+  .navbar {
+    padding: 1rem 3rem; /* Aumenta el padding para mayor espacio */
+    font-size: 1.2em; /* Incrementa ligeramente el tamaño de fuente */
+  }
+
+  .navbar-brand-container {
+    width: 20%; /* Ajusta el ancho del contenedor de la marca */
+  }
+
+  .navbar-nav-container {
+    justify-content: flex-end;
+    margin-right: 3rem; /* Más espacio a la derecha */
+  }
+
+  .navbar-nav-pages {
+    gap: 3rem; /* Mayor separación entre enlaces */
+  }
+
+  .navbar-nav-media {
+    gap: 1.5rem; /* Mayor separación entre íconos de redes sociales */
+  }
+
+  .navbar-nav-media .nav-link i {
+    font-size: 1.5em; /* Aumenta el tamaño de los íconos */
+  }
+
+  .nav-toggle {
+    font-size: 2rem; /* Aumenta el tamaño del botón de toggle si es necesario */
+  }
+
+  /* Contenedores de productos */
+  .three-container {
+    flex-direction: row;
+    height: 80vh;
+    margin: 2rem 0;
+  }
+
+  .two-container {
+    height: 100%;
+  }
+
+  .one-img-container {
+    height: 100%;
+  }
+
+  .somos-container {
+    height: 50vh;
+    padding: 2rem 4rem;
+  }
+
+  .somos-frase {
+    font-size: 4rem; /* Ajusta el tamaño de la frase */
+  }
+
+  /* Sección de filtrado de gafas */
+  .container-title-filter {
+    gap: 30px; /* Mayor espacio entre título y filtro */
+  }
+
+  .title-filter {
+    font-size: 3rem;
+  }
+
+  /* Lista de gafas */
+  .container-list-group {
+    gap: 2rem;
+  }
+  /* Formularios y secciones adicionales */
+  .conForm {
+    padding: 40px;
+  }
+
+  .conForm .btn {
+    padding: 15px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Pantallas extra grandes */
+@media (min-width: 1501px) {
+  /* Estilos para pantallas mayores a 1500px */
 }
 
 /* Responsive styles */
@@ -772,7 +1202,7 @@ footer {
   }
 
   .glasses-container {
-    width: calc(100% - 1rem); /* One item per row with space */
+   
   }
   .container-list-group {
     display: flex;

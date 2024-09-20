@@ -21,13 +21,13 @@
 
 <body>
     <header>
-        <nav class="navbar" id="header">
+        <nav class="navbar" id="header" aria-label="Navegación principal">
             <div class="navbar-brand-container">
                 <a class="navbar-brand-link" href="#">
-                    <img class="navbar-brand-img" src="img/LOGO.jpg.png" alt="MitoGafas Logo">
+                    <img class="navbar-brand-img" src="img/LOGO.jpg.png" alt="Logo de MitoGafas">
                 </a>
             </div>
-            <div class="navbar-nav-container">
+            <div class="navbar-nav-container" id="navbarNav">
                 <ul class="navbar-nav-pages navigation">
                     <li class="nav-item">
                         <a class="nav-link" href="products.html?title=RECETA">RECETA</a>
@@ -47,21 +47,22 @@
                 </ul>
                 <ul class="navbar-nav-media">
                     <li class="nav-brand">
-                        <a class="nav-link" href="https://www.instagram.com/mitogafas/"><i
-                                class="fa-brands fa-instagram"></i></a>
+                        <a class="nav-link" href="https://www.instagram.com/mitogafas/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                     </li>
                     <li class="nav-brand">
-                        <a class="nav-link" href="https://www.facebook.com/mitogafasok/"><i
-                                class="fa-brands fa-facebook"></i></a>
+                        <a class="nav-link" href="https://www.facebook.com/mitogafasok/" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
                     </li>
                     <li class="nav-brand">
-                        <a class="nav-link" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a class="nav-link" href="http://Wa.me/5491173936486" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                     </li>
                 </ul>
             </div>
-            <button class="nav-toggle"><i class="fas fa-bars"></i></button>
+            <button class="nav-toggle" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navegación">
+                <i class="fas fa-bars"></i>
+            </button>
         </nav>
     </header>
+    
     <main>
         <section class="carousel">
             <div id="carouselExampleInterval" class="carousel slide custom-carousel" data-bs-ride="carousel">
@@ -94,7 +95,7 @@
                 <div class="one-img-container one-overlay">
                 <a href="products.html?title=RECETA">
                         <h1 class="title">RECETA</h1>
-                        <img src="./img/receta2.jpg" alt="receta">
+                        <img src="./img/02.png" alt="receta">
                     </a>
                 </div>
             </div>
@@ -111,12 +112,11 @@
 
         <!-- section somos -->
         <section class="somos-container">
-            <div class="somos-container-text">
-                <h3 class="somos-frase">Somos el </h3>
+            <div class="somos-container-text"> 
                 <img src="./img/LOGO.jpg.png" alt="mito">
             </div>
             <br>
-            <h3 class="somos-frase"> que se hace leyenda.</h3>
+            <h3 class="somos-frase">Tu mirada vale</h3>
         </section>
 
         
@@ -125,8 +125,8 @@
             <div class="two-container">
                 <div class="one-img-container one-overlay">
                     <a href="products.html?title=ECLUSIVO OPTICAS">
-                        <h1 class="title">EXCLUSIVO OPTICAS</h1>
-                        <img src="./img/receta2.jpg" alt="opticas">
+                        <h1 class="title">ÓPTICAS</h1>
+                        <img src="./img/opticas.png" alt="opticas">
                     </a>
                 </div>
             </div>
@@ -167,18 +167,18 @@
                 <div class="col-md-4 footer-container-links">
                     <ul class="navbar-nav-links list-inline">
                         <li class="list-inline-item">
-                            <a class="nav-link text-white" href="#">Acerca de</a>
+                            <a class="nav-link text-white" href="#">Somos Mito</a>
                         </li>
                         <li class="list-inline-item">
-                            <a class="nav-link text-white" href="./contacto.html">Contacto</a>
+                            <a class="nav-link text-white" href="">Encontranos</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav-links list-inline">
                         <li class="list-inline-item">
-                            <a class="nav-link text-white" href="#">Politica de privacidad</a>
+                            <a class="nav-link text-white" href="#">Garantía</a>
                         </li>
                         <li class="list-inline-item">
-                            <a class="nav-link text-white" href="#">Terminos y condiciones</a>
+                            <a class="nav-link text-white" href="./contacto.html">Contacto</a>
                         </li>
                     </ul>
                 </div>
@@ -200,6 +200,30 @@
             navContainer.classList.toggle('active');
         });
     </script>
+    <script>// Asegúrate de que este script se ejecute después de que el DOM haya cargado
+        document.addEventListener('DOMContentLoaded', () => {
+          const toggleButton = document.querySelector('.nav-toggle');
+          const navContainer = document.querySelector('.navbar-nav-container');
+        
+          toggleButton.addEventListener('click', () => {
+            navContainer.classList.toggle('active');
+        
+            // Actualizar el atributo aria-expanded para accesibilidad
+            const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+            toggleButton.setAttribute('aria-expanded', !isExpanded);
+          });
+        
+          // Cerrar el menú al hacer clic en un enlace (opcional)
+          document.querySelectorAll('.navbar-nav-pages .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+              if (navContainer.classList.contains('active')) {
+                navContainer.classList.remove('active');
+                toggleButton.setAttribute('aria-expanded', 'false');
+              }
+            });
+          });
+        });
+        </script>
 </body>
 
 </html>

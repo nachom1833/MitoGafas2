@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $comments = htmlspecialchars($_POST['comments']);
 
     // Set the recipient email address
-    $to = "info@mitogafas.com.ar";
+    $to = "mitogafasok@gmail.com";
 
     // Set the email subject
     $subject = "New mensaje del formulario de contacto";
