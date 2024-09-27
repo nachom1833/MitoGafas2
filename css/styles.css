@@ -453,7 +453,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* Space between the title and the filter button */
+  flex-wrap: nowrap;
+  flex-direction: column;
 }
 
 .title-filter {
@@ -538,9 +539,7 @@ footer {
   justify-content: space-evenly;
 }
 
-.list-img-colors li {
- 
-}
+
 
 .list-img-colors img {
   width: 100%;
@@ -792,6 +791,70 @@ main {
   border-color: #333;
 }
 
+
+
+/* Sección "SOMOS MITO" */
+#somos-mito h1 {
+  font-size: 3.5rem;  /* Aumentado */
+  font-weight: bold;
+  color: #000;
+}
+
+#somos-mito p {
+  font-size: 1.5rem;  /* Aumentado */
+  color: #555;
+  line-height: 1.8;  /* Mayor espacio entre líneas */
+}
+
+/* Sección "NUESTROS VALORES" */
+#nuestros-valores {
+  background-color: #f0f0f0;  /* Fondo claro para resaltar */
+  padding: 4rem 2rem;  /* Espaciado generoso */
+  border-radius: 15px;  /* Bordes redondeados */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+}
+
+#nuestros-valores h2 {
+  font-size: 3rem;  /* Título más grande */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 2.5rem;  /* Espacio mayor debajo del título */
+}
+
+#nuestros-valores h3 {
+  font-size: 2rem;  /* Subtítulos más grandes */
+  font-weight: bold;
+  color: #000;
+}
+
+#nuestros-valores p {
+  font-size: 1.25rem;  /* Texto más grande */
+  color: #555;
+  line-height: 1.8;
+}
+
+#nuestros-valores .col-md-4 {
+  padding: 1rem;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+#nuestros-valores .col-md-4:hover {
+  background-color: #e0e0e0;  /* Color de fondo al pasar el cursor */
+  transform: scale(1.05);  /* Aumenta ligeramente el tamaño al hacer hover */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);  /* Sombra al pasar el cursor */
+}
+
+@media (max-width: 768px) {
+  #nuestros-valores .col-md-4 {
+      margin-bottom: 2rem;
+  }
+
+  #nuestros-valores {
+      padding: 2rem 1rem;
+  }
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
   main {
@@ -926,7 +989,7 @@ main {
 
   /* Ajustes en la Sección de Filtrado de Gafas */
   .container-title-filter {
-    flex-direction: row;
+    
     gap: 20px;
   }
 
