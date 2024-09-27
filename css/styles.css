@@ -628,6 +628,7 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin: 1rem;
 }
 
 .dropdown {
@@ -845,6 +846,18 @@ main {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);  /* Sombra al pasar el cursor */
 }
 
+
+/*Exclusivo Opticas */
+
+.soporte-section{
+
+}
+
+
+
+
+
+
 @media (max-width: 768px) {
   #nuestros-valores .col-md-4 {
       margin-bottom: 2rem;
@@ -1000,10 +1013,6 @@ main {
   /* Lista de Gafas */
   .container-list-group {
     gap: 2rem;
-  }
-
-  .glasses-container {
-   
   }
 
   .glasses-container-img img {

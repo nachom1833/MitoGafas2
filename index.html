@@ -124,7 +124,7 @@
         <section class="three-container">
             <div class="two-container">
                 <div class="one-img-container one-overlay">
-                    <a href="products.html?title=ECLUSIVO OPTICAS">
+                    <a href="/opticas.html">
                         <h1 class="title">ÓPTICAS</h1>
                         <img src="./img/opticas.png" alt="opticas">
                     </a>
@@ -132,7 +132,7 @@
             </div>
             <div class="two-container">
                 <div class="one-img-container one-overlay">
-                    <a href="products.html?title=TEAM MITO">
+                    <a href="/equipoMito.html">
                         <h1 class="title">TEAM MITO</h1>
                         <img src="./img/sol2.jpg" alt="team mito">
                     </a>
@@ -158,7 +158,7 @@
                                 <a class="nav-link text-white" href="https://www.facebook.com/mitogafasok/"><i class="fa-brands fa-facebook"></i></a>
                             </li>
                             <li class="list-inline-item">
-                                <a class="nav-link text-white" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                                <a class="nav-link text-white" href="http://Wa.me/5491173936486"><i class="fa-brands fa-whatsapp"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -167,10 +167,10 @@
                 <div class="col-md-4 footer-container-links">
                     <ul class="navbar-nav-links list-inline">
                         <li class="list-inline-item">
-                            <a class="nav-link text-white" href="#">Somos Mito</a>
+                            <a class="nav-link text-white" href="/somosMito.html">Somos Mito</a>
                         </li>
                         <li class="list-inline-item">
-                            <a class="nav-link text-white" href="">Encontranos</a>
+                            <a class="nav-link text-white" href="/encontranos.html">Encontranos</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav-links list-inline">
@@ -187,43 +187,38 @@
     </footer>
     
 
-
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"></script>
-    <script>
-        document.querySelector('.nav-toggle').addEventListener('click', function () {
-            const navContainer = document.querySelector('.navbar-nav-container');
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+</script>
+
+<!-- Script de funcionalidad del menú -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggleButton = document.querySelector('.nav-toggle');
+        const navContainer = document.querySelector('.navbar-nav-container');
+
+        toggleButton.addEventListener('click', () => {
+            // Alternar la clase 'active' para mostrar/ocultar el menú
             navContainer.classList.toggle('active');
-        });
-    </script>
-    <script>// Asegúrate de que este script se ejecute después de que el DOM haya cargado
-        document.addEventListener('DOMContentLoaded', () => {
-          const toggleButton = document.querySelector('.nav-toggle');
-          const navContainer = document.querySelector('.navbar-nav-container');
-        
-          toggleButton.addEventListener('click', () => {
-            navContainer.classList.toggle('active');
-        
-            // Actualizar el atributo aria-expanded para accesibilidad
+
+            // Actualizar el atributo 'aria-expanded' para accesibilidad
             const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
             toggleButton.setAttribute('aria-expanded', !isExpanded);
-          });
-        
-          // Cerrar el menú al hacer clic en un enlace (opcional)
-          document.querySelectorAll('.navbar-nav-pages .nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-              if (navContainer.classList.contains('active')) {
-                navContainer.classList.remove('active');
-                toggleButton.setAttribute('aria-expanded', 'false');
-              }
-            });
-          });
         });
-        </script>
-</body>
+
+        // Cerrar el menú al hacer clic en un enlace del menú (opcional)
+        document.querySelectorAll('.navbar-nav-pages .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navContainer.classList.contains('active')) {
+                    navContainer.classList.remove('active');
+                    toggleButton.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    });
+</script>
 
 </html>
